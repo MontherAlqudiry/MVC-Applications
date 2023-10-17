@@ -1,0 +1,67 @@
+﻿@model Category
+
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row pt-5 pb-3 " >
+       
+            
+       
+        <form method="post" enctype="multipart/form-data">
+            <div class="boredr-2 border-black p-3 ">
+                <div class="row pb-3 ">
+                    <div class="col-6 mt-5"><h2>Edit Category</h2></div>
+                    <div class="col-6 text-end">
+                        <img src="@("~/Image/"+Model.ImageName)" asp-append-version="true" style="width:60%" class="rounded-1" />
+                    </div>
+                </div>
+                <div class="row  mb-4" >
+                    <label asp-for="Name" class="form-label h5"></label>
+                    <input asp-for="Name" class="form-control borderk  rounded-1 shadow-sm" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+
+                </div>
+                <div class="row mb-4 mt-2">
+                    <label asp-for="DisplayOrder" class="form-label h5"></label>
+                    <input asp-for="DisplayOrder" class="form-control  rounded-1 shadow-sm" />
+                    <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+                </div>
+                <div class="row mb-4 mt-2">
+                    <label asp-for="Disc" class="form-label h5"></label>
+                    <input asp-for="Disc" class="form-control  rounded-1 shadow-sm" />
+                    <span asp-validation-for="Disc" class="text-danger"></span>
+                </div>
+                <div class="row mb-4 mt-2">
+                    <label asp-for="ImageFile" class="form-label h5">Edit Image</label>
+                    <input asp-for="ImageFile" class="form-control h6  rounded-1 shadow" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-4  p-0 ">
+                        <button type="submit" class="btn btn-primary form-control  rounded-1 h6">Update</button>
+                        
+                    </div>
+                    <div class="col-8  text-end p-0">
+                        <a asp-controller="Category" asp-action="Index" class="btn btn-outline-primary  rounded-1 h6">Back To List</a>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+        @section Scripts{
+            @{
+                <partial name="_ValidationScriptsPartial" />
+            }
+        }
+
+
+    </div>
+
+
+</div>

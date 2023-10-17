@@ -1,0 +1,94 @@
+﻿@model List<Category>
+@{
+   
+    
+}
+
+
+<h1 class="display-5 text-center mt-5  "><strong>DEMO</strong> WHERE YOU CAN EXPLORER ALL THE GRENES</h1>
+<p class="p mb-5 text-center h6 text-secondary">Demo the home of all categories</p>
+
+
+<div class="card-group  text-center ms-5 me-5 ">
+    @foreach (var obj in Model.Take(5))
+    {
+        <div class="card ms-2 me-2 p-0 pb-3 rounded-2 shadow ">
+            <img class="card-img-top" src="@("~/Image/"+obj.ImageName)" alt="Card image" asp-append-version="true" style="height:70%" >
+            <div class="card-body">
+                <h4 class="card-title ">@obj.Name</h4>
+                <p class="card-text ">@obj.Disc.Substring(0,120) ...</p>
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@obj.ID" class="btn btn-primary shadow stretched-link rounded-1">Details</a>
+            </div>
+        </div>
+    }
+    
+</div>
+
+<a asp-controller="Category" asp-action="Index" class="text-center mb-1 mt-5 nav-link text-black "><strong>Find your gernes now <i class="bi bi-arrow-right text-black"></i> </strong></a>
+    <br />
+    <br />
+
+@* <div class="beige-bg-color row mb-5 pt-4 pb-5">
+    <h5 class="h4 text-white m-3 ">Discover all the Categories</h5>
+    <div class="card-group rounded-2">
+        <div class="card img-fluid m-1 border-0 shadow rounded-3 ">
+            <div class="card border-0 rounded-2" style="position: relative;">
+                <img class="card-img-top rounded-2 border-0 opacity-75" src="@("~/Image/"+""pexels-photo-1600139234433098.jpeg"")" asp-append-version="true" alt="Card image">
+                <div class="card-img-overlay d-flex justify-content-center align-items-end" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+                    <h2 class="text-center text-white "><b>Documantary</b></h2>
+                </div>
+            </div>  
+       
+    </div>
+    
+  
+    </div> *@
+
+<div class=" row p-0 me-5 ms-5 mb-5 text-center">
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center ">
+                <div class="card img-fluid  border-0 shadow  ">
+                    <div class="card border-0 rounded-2" style="position: relative;">
+                        <img class="card-img-top rounded-2 border-0" src="@("~/Image/"+"pexels-photo-1600139234433098.jpeg")" asp-append-version="true" alt="Card image">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-end" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+                    <h2 class=" text-center text-white mb-3 btn btn-outline-light  " style="font-size: 1vw;"><b><a asp-controller="Category" class="text-decoration-none text-white   " asp-action="Index" style="font-size: 1vw;">Documantary</a></b></h2>
+                        </div>
+                    </div>
+               </div>
+    </div>
+          
+
+
+            <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8  beige-bg-color text-start rounded-2 p-5">
+        <h3 class="display-6 text-white mb-3" style="font-size: 2vw;">Documentary</h3>
+        <p class="h5 text-white p-2" style="font-size: 1vw;">
+                    documentary is a non-fictional motion-picture intended to "document reality,
+                    primarily for the purposes
+                    of instruction".Bill Nichols 
+                    has characterized the documentary
+                    in terms of "a filmmaking practice, a cinematic tradition, and mode of audienc
+                    e reception [that remains] a
+                    practice without clear boundaries". Early documentary films, originally called
+                    "actuality films", lasted one
+                    minute or less.<br /><br /> Over time, documentaries have evolved to become longer in length
+                    .
+                    Some examples are educational, observational. Documentaries are
+                    very informative, and are often 
+                    used within schools to teach various principles.<br /><br /> Documentary 
+                    filmmakers have a responsibility to 
+                    be truthful to their vision of the world without intentionally misrepresenting 
+                    a topic.
+
+                    Social-media platforms (such as YouTube) have provided an avenue for the growth
+            of the documentary-film genre. <br /><br />documentary is a non-fictional motion-picture intended to "document reality,
+            primarily for the purposes
+            of instruction".Bill Nichols
+            has characterized the documentary
+            in terms of "a filmmaking practice, a cinematic tradition, and mode of audienc
+            e reception a
+            practice without clear boundaries".
+            
+                </p>
+            </div>
+    
+   </div>
+    

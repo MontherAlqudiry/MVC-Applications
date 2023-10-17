@@ -1,0 +1,52 @@
+﻿@model Category
+
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row pt-5 pb-3">
+        <h2>Delete Category</h2>
+        <form method="post">
+            <div class="boredr-2 border-black p-3 mt-4 borde">
+                
+                <div class="row  mb-4">
+                    <label asp-for="Name"  class="form-label text-black h5"></label>
+                    <input asp-for="Name" disabled class="form-control borderk  rounded-1 shadow-sm" />
+
+                </div>
+                <div class="row mb-4 mt-2">
+                    <label asp-for="DisplayOrder" class="form-label text-black h5"></label>
+                    <input asp-for="DisplayOrder" disabled class="form-control  rounded-1 shadow-sm" />
+                </div>
+                <div class="row mb-4">
+                    <div class="col-6">
+                        <h5>Discription</h5>
+                        <p>@Model.Disc ...</p>
+                    </div>
+                    <div class="col-6 text-end p-0">
+                       
+                        <img src="@("~/Image/"+Model.ImageName)" asp-append-version="true" class="rounded-1" style="width:60%" />
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-4  p-0 ">
+                        <button type="submit" class="btn btn-primary form-control h6 rounded-1">Delete</button>
+                    </div>
+                    <div class="col-8  text-end p-0">
+                        <a asp-controller="Category" asp-action="Index" class="btn btn-outline-primary h6 rounded-1">Back To List</a>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+
+
+</div>

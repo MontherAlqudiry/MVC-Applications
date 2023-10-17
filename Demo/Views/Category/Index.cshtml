@@ -1,0 +1,63 @@
+﻿@model List<Category>
+
+@if(TempData["success"] != null)
+{
+    <h2 class="h5 text-center mt-5" >@TempData["success"]</h2>
+}
+<div class="container pe-5 ps-5 ">
+     <div class="row pt-5 pb-3">
+         <div class="col-8">
+            <h3 class=" text-primary h3 ">Category list</h3>
+         </div>
+         
+        <div class="col-4 text-end p-0 ">
+             @* <a asp-controller asp="Home" asp-action="Index" class="btn btn-outline-primary">
+                Add New Category
+            </a>  *@
+            @Html.ActionLink("Add New Category", "Create", "Category", new object { }, new { @class = "btn btn-outline-primary rounded-1 shadow " })
+        </div>
+
+     </div>
+    <div class="row rounded-1">
+   <table class="table table-bordered table-striped m-6 shadow rounded-1">
+    <tr >
+            <thead>
+
+            </th>
+            <th class="text-center h5">
+                Display
+            </th>
+            <th class="text-center h5">
+                Category Image
+            </th>
+            <th class="text-center h5">
+            Category Name 
+        
+        <th></th>
+    </tr></thead>
+    <tbody>
+
+        @foreach(var obj in Model){
+        <tr>
+                        <td class="h6 text-center align-middle " style="width:10%">@obj.DisplayOrder</td>
+                        <td class="text-center align-middle" style="width:25%"><img src="@("~/Image/"+obj.ImageName)" asp-append-version="true" class="rounded-1" style="width:60%" /></td>
+
+                        <td class="h6 text-center align-middle">@obj.Name</td>
+
+                        <td class="text-center align-middle">
+                            <div class=" btn-group rounded-1 " role="group">
+                                <a asp-conroller="Category" asp-route-id="@obj.ID" asp-action="Edit" class="btn btn-outline-primary btn-sm mx-1 rounded-1 shadow h6">
+                               Edit
+                            </a>
+                                <a asp-conroller="Category" asp-route-id="@obj.ID" asp-action="Delete" class="btn btn-outline-primary btn-sm mx-1 rounded-1 shadow h6">
+                        Delete
+                    </a>
+                    
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+    </table>
+    </div>
+</div>
